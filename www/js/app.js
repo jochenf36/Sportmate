@@ -47,26 +47,26 @@ angular.module('starter', ['ionic', 'starter.controllers'])
         }
       }
     })
-    .state('app.playlists', {
-      url: "/playlists",
+    .state('app.activities', {
+      url: "/activities",
       views: {
         'menuContent' :{
-          templateUrl: "templates/playlists.html",
-          controller: 'PlaylistsCtrl'
+          templateUrl: "templates/activities.html",
+          controller: 'ActivitiesCtrl'
         }
       }
     })
 
     .state('app.single', {
-      url: "/playlists/:playlistId",
+      url: "/activity/:activityId",
       views: {
         'menuContent' :{
-          templateUrl: "templates/playlist.html",
-          controller: 'PlaylistCtrl'
+          templateUrl: "templates/activity.html",
+          controller: 'ActivityCtrl'
         }
       }
     });
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/app/playlists');
+  $urlRouterProvider.otherwise('/app/activities');
 });
 

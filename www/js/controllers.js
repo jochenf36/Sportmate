@@ -3,6 +3,10 @@ angular.module('starter.controllers', [])
 .controller('AppCtrl', function($scope, $ionicModal, $timeout) {
   // Form data for the login modal
   $scope.loginData = {};
+  $scope.activities = [
+            { title: 'Lopen 5km', activity:"Running", distance:{ unit:"km", amount:"5"},  id: 0 },
+            { title: 'Lopen 10km', activity:"Running", distance:{ unit:"km", amount:"10"},  id: 1 }
+        ];
 
   // Create the login modal that we will use later
   $ionicModal.fromTemplateUrl('templates/login.html', {
@@ -33,16 +37,10 @@ angular.module('starter.controllers', [])
   };
 })
 
-.controller('PlaylistsCtrl', function($scope) {
-  $scope.playlists = [
-    { title: 'Reggae', id: 1 },
-    { title: 'Chill', id: 2 },
-    { title: 'Dubstep', id: 3 },
-    { title: 'Indie', id: 4 },
-    { title: 'Rap', id: 5 },
-    { title: 'Cowbell', id: 6 }
-  ];
+.controller('ActivitiesCtrl', function($scope) {
+
 })
 
-.controller('PlaylistCtrl', function($scope, $stateParams) {
+.controller('ActivityCtrl', function($scope, $stateParams) {
+    $scope.activity = $scope.activities[$stateParams.activityId];
 });
